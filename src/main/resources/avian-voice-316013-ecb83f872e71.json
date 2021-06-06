@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "avian-voice-316013",
+  "private_key_id": "ecb83f872e71207dc0f7aa1390ff8b34bd0484da",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDovXUhKijGp5Yc\nY94L9xIkUwGx4m6/WQawb/J4RK9xuoura2O4pOCt4hz43+9u4zpkjy26nnWFgV7g\n0SoadSIZOxq53XD3R4FiBoWrjIvdL8te8LTj+yDQdo0R1m56HGE5gAYaqHzqmcYf\nzbwvK9jLh9VpBGnhzOONuL4CA6Fr8+22O9HIsfw0fPT9O04I/ZKHN2R0LweX81tS\nHtiuzAjbSWP893eEgD40sqsZLH9MnIHjRhmF7zyCRvkaPBZhHNAM52iUPTKuE7iF\nt4nDXVRsgqS0PN1XSjVSM47JgLk9QvlvQsxI/hJiAw6+de1zPYzzbtIbNKJxdboM\ny98E0dJLAgMBAAECggEAEapzzhEjqDSHRd9kttbJpz0vtz9fNaH9yn2s02kvQfwt\nZtUPbDADp98uYMuqommYAJMHnw8xD3Gq8Hif8AMtE+ozFKGU1gg072pcUhGoeiEL\nGElACcABlSEygwSaPSWTUaiAjhx04t/KNJbKrm/vFD/auI5vtQZ2zUaVEZUR9x4X\nQj/2zUVMkRH8QcdmyOyYN4BanUNk72ou2TBEbOZr1q9j8PYRYG/knk6Q8E8rK98o\nJKlzlzDC8cL+C/VXHjhL224FGw3BiJ4cLALfZk+bSrfDUq2xrfAeHoUt/KRFuSIo\noSAOm8D/26snyD1NTwh+iXivA1WX1g5U/NRo+JY4bQKBgQD0tmNRjOQI4KooVTda\n/DZ84malxBFJ45z76jaCkSX81fGrGhsoOjAocVsTRntkJ5Vn1DYuGzghT0zNcgky\nGvGNNZ1misEDYca9Djr/8szcT3wuzsJeA6ZpXagvi311cJsYC+Y0Beyu4QgpvnGs\ndn/gtW+kDO+OXYpCRlYNxwSZRQKBgQDzebKE2mgWxByhmCgmZIcBq+NKh/maqxgD\nKoHEDobMBZaTvOgTxhDwDnfFKvhbV4wHT2KogiNm7Mki/PaZeGaX5ZOFL3IejbO8\n6GsmC5dpTR00cG0f22iCTi04mmZ3NxypM8ZqUNQd6v31hmF5wkOTFCwU6lf01Rnp\nFlXRZV3OTwKBgQC0fu7E0OnFjoiTVT+OMaey938E15h06pj4yqlIJu1hDyDAtnG/\neyPYQLwPfJY4qmWt/r2zxknhb89TXcBgn7T5FcmyP7fb2buv6JYmAR2PhmUvVTvS\nAlk1MGqEHxv7ioIq+2PhjVklKEBQIfNQZNsvkEP3Ob9cP6xh8+U3JktDDQKBgHNK\nSC9CoJFPMeOPAkwTxB4Vf55WPupvZAJzyVjGLCxF5SR2Ckr6uiCCKVKy40GVdhgs\nDiKO5SairyejMz4+1g3NRwqFCfvPy7GDOOGeEYdqXY7sQbAZHCa/0AgCjMycyzSP\n8L99IMQ99x2hEV0vkQH/RlRtF1M26XsG+YIbBs1fAoGBAL0yhY3yWni6QN7odcSE\n9JCJmy/Sytg7kTgU0n6Yr6N+MAPdduGSeKsAXrk6dmbiuI5ZtPyYdzqS9tC2kBt/\npMcOMX1DBQPLFFckmfc8+uQ/sUo/GamlQ03yAxhkrwtxboDJq9AFNzEdGNqtc5Mp\nsBurjGKcvjQXZGLxU/WQd1ko\n-----END PRIVATE KEY-----\n",
+  "client_email": "playground@avian-voice-316013.iam.gserviceaccount.com",
+  "client_id": "115583588727730418742",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/playground%40avian-voice-316013.iam.gserviceaccount.com"
+}
