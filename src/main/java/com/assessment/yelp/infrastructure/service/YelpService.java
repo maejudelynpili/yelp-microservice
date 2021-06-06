@@ -1,12 +1,9 @@
 package com.assessment.yelp.infrastructure.service;
 
-import com.assessment.yelp.abstraction.IGoogleVisionService;
 import com.assessment.yelp.abstraction.IYelpMapper;
 import com.assessment.yelp.abstraction.IYelpService;
 import com.assessment.yelp.config.ApiKeysConfig;
 import com.assessment.yelp.model.ReviewResponse;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -27,7 +24,6 @@ public class YelpService implements IYelpService {
     private final ApiKeysConfig apiKeysConfig;
     private final RestTemplate restTemplate;
     private final IYelpMapper mapper;
-    private final IGoogleVisionService googleVisionService;
 
     @Override
     public ArrayList<ReviewResponse> getReviews(String businessName) {
@@ -41,8 +37,6 @@ public class YelpService implements IYelpService {
         var httpEntity = new HttpEntity<>(headers);
 
         var response = restTemplate.exchange(uri, HttpMethod.GET, httpEntity, String.class);
-
-        var reviews = mapper.map(response.getBody());
 
         return mapper.map(response.getBody());
     }
