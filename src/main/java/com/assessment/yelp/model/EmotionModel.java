@@ -1,7 +1,10 @@
 package com.assessment.yelp.model;
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
+
+import java.util.Map;
 
 @Getter
 @Setter
@@ -9,11 +12,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UserModel {
-    private String id;
-    private String imageUrl;
-    private String name;
-    private String profileUrl;
-    private EmotionModel emotion;
-
+public class EmotionModel {
+    private Map<String, String> emotions;
 }

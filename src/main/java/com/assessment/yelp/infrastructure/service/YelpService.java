@@ -3,36 +3,44 @@ package com.assessment.yelp.infrastructure.service;
 import com.assessment.yelp.abstraction.IYelpMapper;
 import com.assessment.yelp.abstraction.IYelpService;
 import com.assessment.yelp.config.ApiKeysConfig;
+import com.assessment.yelp.enums.Constants;
 import com.assessment.yelp.model.ReviewResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Service class that processes the request and responses
+ */
 @Service
 @RequiredArgsConstructor
 public class YelpService implements IYelpService {
-
-    private static final String PARAM_AUTHORIZATION_VALUE = "Bearer ";
-    private static final String PARAM_AUTHORIZATION_KEY = "Authorization";
-    private static final String PARAM_CACHE_KEY = "Cache-Control";
-    private static final String PARAM_CACHE_VALUE = "no-cache";
-    private static final String METHOD_REVIEWS = "/reviews";
 
     private final ApiKeysConfig apiKeysConfig;
     private final RestTemplate restTemplate;
     private final IYelpMapper mapper;
 
+    /**
+     * Retrieves the reviews data of a business
+     * @param businessName String Business Name
+     * @return ArrayList<{@link ReviewResponse} Review responses with Emotion Data>
+     * @throws IOException
+     */
     @Override
-    public ArrayList<ReviewResponse> getReviews(String businessName) {
+    public ArrayList<ReviewResponse> getReviews(String businessName) throws IOException {
         var headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.add(PARAM_AUTHORIZATION_KEY, PARAM_AUTHORIZATION_VALUE.concat(apiKeysConfig.getYelpKey()));
-        headers.add(PARAM_CACHE_KEY, PARAM_CACHE_VALUE);
+        headers.add(Constants.PARAM_AUTHORIZATION_KEY, Constants.PARAM_AUTHORIZATION_VALUE.concat(apiKeysConfig.getYelpKey()));
+        headers.add(Constants.PARAM_CACHE_KEY, Constants.PARAM_CACHE_VALUE);
 
-        var uri = buildUri(businessName, METHOD_REVIEWS);
+        var uri = buildUri(businessName, Constants.METHOD_REVIEWS);
 
         var httpEntity = new HttpEntity<>(headers);
 
@@ -41,7 +49,12 @@ public class YelpService implements IYelpService {
         return mapper.map(response.getBody());
     }
 
-
+    /**
+     * Method that creates the url
+     * @param businessName String Business Name
+     * @param method String API method
+     * @return
+     */
     private String buildUri(String businessName, String method) {
         final var https = "https://";
         return https.concat(apiKeysConfig.getYelpUrl()).concat(businessName)
