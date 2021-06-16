@@ -14,7 +14,7 @@ public class ReviewResponse {
     private String url;
     private String text;
     private Integer rating;
-    private String createdOn;
+    private String time_created;
     private UserModel user;
 
 }
