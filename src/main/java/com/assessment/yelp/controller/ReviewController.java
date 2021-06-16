@@ -1,8 +1,8 @@
 package com.assessment.yelp.controller;
 
 import com.assessment.yelp.abstraction.IYelpService;
+import com.assessment.yelp.model.ReviewListResponse;
 import com.assessment.yelp.model.ReviewRequest;
-import com.assessment.yelp.model.ReviewResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.ArrayList;
 
 /**
  * API endpoint for dealing with reviews
@@ -35,12 +34,10 @@ public class ReviewController {
      * @return ResponseEntity<{@link ReviewResponse}> Review Response with Emotion Data
      */
     @GetMapping(value = "/business", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<ReviewResponse> getReviews (@RequestBody @Valid ReviewRequest request) {
+    public ResponseEntity<ReviewListResponse> getReviews (@RequestBody @Valid ReviewRequest request) {
 
         try {
-            ArrayList<ReviewResponse> data = service.getReviews(request.getBusinessName());
-
-            return new ResponseEntity(data, HttpStatus.OK);
+            return new ResponseEntity(service.getReviews(request.getBusinessName()), HttpStatus.OK);
         } catch (Exception e) {
             StringWriter errors = new StringWriter();
             e.printStackTrace(new PrintWriter(errors));

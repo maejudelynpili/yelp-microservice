@@ -4,7 +4,7 @@ import com.assessment.yelp.abstraction.IYelpMapper;
 import com.assessment.yelp.abstraction.IYelpService;
 import com.assessment.yelp.config.ApiKeysConfig;
 import com.assessment.yelp.enums.Constants;
-import com.assessment.yelp.model.ReviewResponse;
+import com.assessment.yelp.model.ReviewListResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * Service class that processes the request and responses
@@ -34,7 +33,7 @@ public class YelpService implements IYelpService {
      * @throws IOException
      */
     @Override
-    public ArrayList<ReviewResponse> getReviews(String businessName) throws IOException {
+    public ReviewListResponse getReviews(String businessName) throws IOException {
         var headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.add(Constants.PARAM_AUTHORIZATION_KEY, Constants.PARAM_AUTHORIZATION_VALUE.concat(apiKeysConfig.getYelpKey()));
@@ -46,7 +45,7 @@ public class YelpService implements IYelpService {
 
         var response = restTemplate.exchange(uri, HttpMethod.GET, httpEntity, String.class);
 
-        return mapper.map(response.getBody());
+        return mapper.mapper(response.getBody());
     }
 
     /**
